@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visual Product</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: white;
+            color: black;
+        }
+        header {
+            background: white;
+            padding: 20px 0;
+        }
+        .head-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .head-content ul {
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        .head-content ul li {
+            margin-left: 20px;
+        }
+        .head-content ul li a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+        }
+        .head-content ul li button {
+            background: black;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+       
+        #home {
+            background: black;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        .hero-content {
+            max-width: max-content;
+            margin: 0 auto;
+        }
+        .hero-content h1 {
+            line-height: 42px;
+            margin: 20px 0;
+            margin-left: 35%;
+            margin-right: 35%;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .hero-content p {
+            margin: 20px 0;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        .buttons {
+            margin: 20px 0;
+        }
+        .border-button {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+        .filled-button {
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+        .hero-content image {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
+       
+        .image-section {
+            display: flex;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+        .image-section image {
+            border: 1px solid #E5E5E5;
+            padding: 30px;
+            width: calc(100% / 8 - 2px);
+            box-sizing: border-box;
+        }
+       
+        .service-section {
+            display: flex;
+            padding: 20px;
+            margin: 20px;
+        }
+        .service-item {
+            padding: 50px;
+        }
+       
+        .content-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+        }
+        .section-white {
+            background-color: #fff;
+            color: #000;
+            padding: 7%;
+        }
+        .section-black {
+            background-color: #000;
+            color: #fff;
+            padding: 7%;
+        }
+        .text-content {
+            flex: 1;
+            max-width: 50%;
+        }
+        .text-content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .text-content p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .text-content .primary-button,
+        .text-content .secondary-button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .primary-button {
+            background-color: #000;
+            color: #fff;
+            border: none;
+        }
+        .secondary-button {
+            background-color: transparent;
+            color: #000;
+            border: 2px solid #000;
+            border-radius: 20px;
+        }
+        .section-black .primary-button {
+            background-color: #fff;
+            color: #000;
+        }
+        .section-black .secondary-button {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 20px;
+        }
+        .image-content {
+            flex: 1;
+            max-width: 50%;
+        }
+        .image-content image {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .centered-section {
+            background: black;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px;
+        }
+        .centered-section h1 {
+            line-height: 42px;
+            margin: 20px 0;
+            font-size: 35px;
+            font-weight: bold;
+            margin-left: 35%;
+            margin-right: 35%;
+        }
+        .centered-section p {
+            margin: 20px 0;
+            margin-left: 30%;
+            margin-right: 30%;
+        }
+        .buttons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .border-button {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .filled-button {
+            background: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            border-radius: 20px;
+        }
+        
+        .categories {
+            color: #333945;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+        .categories > div {
+            margin: 50px;
+            padding: 30px;
+        }
+        .categories ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .categories ul li {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .categories h3 {
+            padding-bottom: 15px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .categories span {
+            background-color: black;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+        /* Style for the section language*/
+        .language-section {
+            text-align: center;
+            margin: 0 70px;
+            padding: 20px 0;
+            border-top: 1px solid #D4D6DB;
+            border-bottom: 1px solid #D4D6DB;
+        }
+        .language-section a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #010102;
+        }
+        .language-section a:first-child {
+            text-decoration: underline;
+        }
+        footer {
+            text-align: center;
+        }
+        ul.footer {
+            list-style: none;
+            padding: 10px 70px;
+            display: flex;
+            justify-content: space-between;
+        }
+        ul.footer li.last {
+            margin-left: auto;
+        }
+        li {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- banner-->
+    <header>
+        <nav class="head-content">
+            <p class="logo">Visual Product</p>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button>Get started</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      
+        <section id="home">
+            <div class="hero-content">
+                <h1>Product Management SaaS: A Visual Guide</h1>
+                <p>In today's digital age, effective product management is crucial for the success of any software-as-a-service (SaaS) company.</p>
+                <image src="image/men1.jpg" alt="image">
+                <div class="buttons">
+                    <button class="border-button">Get started</button>
+                    <button class="filled-button">Talk to sales</button>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="image-section">
+            <image src="image/hub.jpg" alt="">
+            <image src="image/inter.jpg" alt="">
+            <image src="image/google.jpg" alt="">
+            <image src="image/micro.jpg" alt="">
+            <image src="image/hub.jpg" alt="">
+            <image src="image/inter.jpg" alt="">
+            <image src="image/google.jpg" alt="">
+            <image src="image/micro.jpg" alt="">
+        </section>
+
+        <section class="service-section">
+            <div class="service-item">
+                <image src="image/mob.jpg" alt="Mobile app">
+                <h2>Mobile app</h2>
+                <p>Lorem ipsum dolor sit amet consecte turole adipiscing elit semper dalaracc lacus velolte facilisis volutpat est velitolm.</p>
+            </div>
+            <div class="service-item">
+                <image src="image/desktop.jpg" alt="Desktop app">
+                <h2>Desktop app</h2>
+                <p>Lorem ipsum dolor sit amet consecte turole adipiscing elit semper dalaracc lacus velolte facilisis volutpat est velitolm.</p>
+            </div>
+            <div class="service-item">
+                <image src="image/user.jpg" alt="Multiple users">
+                <h2>Multiple users</h2>
+                <p>Lorem ipsum dolor sit amet consecte turole adipiscing elit semper dalaracc lacus velolte facilisis volutpat est velitolm.</p>
+            </div>
+        </section>
+
+        <section class="content-section section-white">
+            <div class="text-content">
+                <h1>A dedicated team to grow your company</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.</p>
+                <button class="primary-button">Get started</button>
+                <button class="secondary-button">Talk to sales</button>
+            </div>
+            <div class="image-content">
+                <image src="image/men2.jpg" alt="Dedicated team">
+            </div>
+        </section>
+
+        <section class="content-section section-black">
+            <div class="image-content">
+                <image src="image/men3.jpg" alt="Dedicated team">
+            </div>
+            <div class="text-content">
+                <h1>A dedicated team to grow your company</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.</p>
+                <button class="primary-button">Get started</button>
+                <button class="secondary-button">Talk to sales</button>
+            </div>
+        </section>
+
+        <section class="content-section section-white">
+            <div class="text-content">
+                <h1>A dedicated team to grow your company</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.</p>
+                <button class="primary-button">Get started</button>
+                <button class="secondary-button">Talk to sales</button>
+            </div>
+            <div class="image-content">
+                <image src="image/men2.jpg" alt="Dedicated team">
+            </div>
+        </section>
+
+        <section class="content-section section-black">
+            <div class="image-content">
+                <image src="image/men4.jpg" alt="Dedicated team">
+            </div>
+            <div class="text-content">
+                <h1>A dedicated team to grow your company</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.</p>
+                <button class="primary-button">Get started</button>
+                <button class="secondary-button">Talk to sales</button>
+            </div>
+        </section>
+
+        <section class="content-section section-white">
+            <div class="text-content">
+                <h1>A dedicated team to grow your company</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.</p>
+                <button class="primary-button">Get started</button>
+                <button class="secondary-button">Talk to sales</button>
+            </div>
+            <div class="image-content">
+                <image src="image/men5.jpg" alt="Dedicated team">
+            </div>
+        </section>
+
+        <section class="centered-section">
+            <h1>A dedicated team to grow your company</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipiscing eli mattis sit phasellus mollis sit aliquam sit nullam neque ultrices.</p>
+            <div class="buttons">
+                <button class="border-button">Get started</button>
+                <button class="filled-button">Talk to sales</button>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div>
+                <ul>
+                    <li>
+                        <h3>Integrations</h3>
+                    </li>
+                    <li>Pricing</li>
+                    <li>Integrations</li>
+                    <li>Affiliate Programs</li>
+                    <li>Agency Partners <span>New</span></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3>Marketing</h3>
+                    </li>
+                    <li>Entrepreneur</li>
+                    <li>Online marketer</li>
+                    <li>Marketing manager</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3>Head</h3>
+                    </li>
+                    <li>About</li>
+                    <li>Careers</li>
+                    <li>API Docs</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3>Solutions</h3>
+                    </li>
+                    <li>Entrepreneur</li>
+                    <li>Online marketer</li>
+                    <li>Marketing manager</li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        <h3>Editors</h3>
+                    </li>
+                    <li>Entrepreneur</li>
+                    <li>Online marketer</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="language-section">
+                <a href="">English</a>
+                <a href="">. Español</a>
+                <a href="">. Français</a>
+            </div>
+        </section>
+
+        <footer>
+            <ul class="footer">
+                <li>Privacy Policy</li>
+                <li>Security Information</li>
+                <li>Integrations</li>
+                <li class="last">Copyright © 2022</li>
+            </ul>
+        </footer>
+    </main>
+
+</body>
+
+</html>
